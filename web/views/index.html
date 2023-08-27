@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>MyBlog</title>
+</head>
+<body>
+    <header></header>
+    <content class="container">
+        <div class="sidebar">
+            <ul>
+                <li>Menu</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <div class="content">
+            {{ range $post := .PostsList }}
+                <h1>Title:  {{ $post.Title }}</h1>
+                <div>
+                    {{ $post.Body }}
+                </div>
+            {{ end }}
+        </div>
+    </content>
+    <footer></footer>
+</body>
+</html>
